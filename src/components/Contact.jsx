@@ -79,11 +79,11 @@ const Contact = () => {
     id="contact" 
     className="section"
     >
-      <div className="container lg:grid-cols-2 lg:items-stretch">
+      <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
         <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
           <h2 className="headline-1 lg:max-w-[12ch] reveal-up">Contact me for collaboration</h2>
           <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] lg:max-w-[30ch] reveal-up">
-            React out today to discuss your project needs and start
+            Reach out today to discuss your project needs and start
             collaborating on something amazing!
           </p>
 
@@ -151,7 +151,7 @@ const Contact = () => {
                 id="message"
                 placeholder="Hi!"
                 required
-                className="text-field resize-y min-h-32 reveal-up"
+                className="text-field resize-y min-h-32 max-h-80 reveal-up"
               ></textarea>
             </div>
 
