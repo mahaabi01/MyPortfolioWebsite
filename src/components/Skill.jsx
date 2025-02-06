@@ -4,62 +4,62 @@ import SkillCard from "./SkillCard";
 
 const skillItem = [
   {
-    imgSrc: './src/images/figma.svg',
+    imgSrc: 'public/images/figma.svg',
     label: 'Figma',
     desc: 'Design tool'
   },
   {
-    imgSrc: './src/images/css3.svg',
+    imgSrc: 'public/images/css3.svg',
     label: 'CSS',
     desc: 'User Interface'
   },
   {
-    imgSrc: './src/images/javascript.svg',
+    imgSrc: 'public/images/javascript.svg',
     label: 'JavaScript',
     desc: 'Interaction'
   },
   {
-    imgSrc: './src/images/nodejs.svg',
+    imgSrc: 'public/images/nodejs.svg',
     label: 'NodeJS',
     desc: 'Web Server'
   },
   {
-    imgSrc: './src/images/expressjs.svg',
+    imgSrc: 'public/images/expressjs.svg',
     label: 'ExpressJS',
     desc: 'Node Framework'
   },
   {
-    imgSrc: './src/images/mongodb.svg',
+    imgSrc: 'public/images/mongodb.svg',
     label: 'MongoDB',
     desc: 'Database'
   },
   {
-    imgSrc: './src/images/react.svg',
+    imgSrc: 'public/images/react.svg',
     label: 'React',
     desc: 'Framework'
   },
   {
-    imgSrc: './src/images/tailwindcss.svg',
+    imgSrc: 'public/images/tailwindcss.svg',
     label: 'TailwindCSS',
     desc: 'User Interface'
   },
   {
-    imgSrc: './src/images/python-3.svg',
+    imgSrc: 'public/images/python-3.svg',
     label: 'Python',
     desc: 'Python'
   },
   {
-    imgSrc: './src/images/pandas.svg',
+    imgSrc: 'public/images/pandas.svg',
     label: 'Pandas',
     desc: 'Pandas'
   },
   {
-    imgSrc: './src/images/tensorflow-2.svg',
+    imgSrc: 'public/images/tensorflow-2.svg',
     label: 'TensorFlow',
     desc: 'TensorFlow'
   },
   {
-    imgSrc: './src/images/pyTorch-2.svg',
+    imgSrc: 'public/images/pyTorch-2.svg',
     label: 'PyTorch',
     desc: 'PyTorch'
   },

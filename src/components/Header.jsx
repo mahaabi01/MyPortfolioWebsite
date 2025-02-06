@@ -9,7 +9,8 @@ const Header = () => {
         <h1>
           <a href="/" className="logo">
             <img
-              src="./src/images/abilash-maharjan-high-resolution-logo.png"
+              // src="./src/images/abilash-maharjan-high-resolution-logo.png"
+              src="public/images/abilash-maharjan-high-resolution-logo.png"
               width={40}
               height={40}
               alt="Abilash Maharjan"

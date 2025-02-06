@@ -35,8 +35,7 @@ const About = () => {
             ))}
 
             <img
-              // src="./src/images/logo.svg"
-              src="./src/images/abilash-maharjan-high-resolution-logo.png"
+              src="public\images\abilash-maharjan-high-resolution-logo.png"
               alt="Logo"
               width={30}
               height={30}
