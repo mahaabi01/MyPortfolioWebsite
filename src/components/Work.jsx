@@ -2,38 +2,38 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: 'public/images/project-1.jpg',
+    imgSrc: 'images/project-1.jpg',
     title: 'VMS - Inventory MS',
     tags: ['MySQL', 'Node', 'React'],
     projectLink: 'https://github.com/mahaabi01/VMS---Frontend'
   },
   {
-    imgSrc: 'public/images/project-2.jpg',
+    imgSrc: 'images/project-2.jpg',
     title: 'eCommerce website',
     tags: ['eCommerce', 'Development'],
     projectLink: 'https://github.com/mahaabi01/eCommerce-mern2'
   },
   {
-    imgSrc: 'public/images/project-3.jpg',
+    imgSrc: 'images/project-3.jpg',
     title: 'Blog Site',
     tags: ['API', 'React', 'Frontend'],
     projectLink: 'https://github.com/mahaabi01/reactBlogSite'
   },
   {
-    imgSrc: 'public/images/project-4.jpg',
+    imgSrc: 'images/project-4.jpg',
     title: 'Book Store',
     tags: ['Development', 'CRUD', 'Backend'],
     projectLink: 'https://github.com/mahaabi01/bookStore'
   },
   {
-    imgSrc: 'public/images/project-5.jpg',
+    imgSrc: 'images/project-5.jpg',
     title: 'Expense Tracker',
     tags: ['Web-design', 'Development'],
     projectLink: 'https://github.com/mahaabi01/ExpenseTrackerMERN'
   },
   
   {
-    imgSrc: 'public/images/project-6.jpg',
+    imgSrc: 'images/project-6.jpg',
     title: 'Chest X-ray - ARRG',
     tags: ['AI/ML', 'LLM', 'NLP', 'Major Project-BCT'],
     projectLink: 'https://github.com/mahaabi01/radiology-report-generation'
