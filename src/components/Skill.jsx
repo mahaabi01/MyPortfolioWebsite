@@ -43,13 +43,33 @@ const skillItem = [
     label: 'TailwindCSS',
     desc: 'User Interface'
   },
+  {
+    imgSrc: './src/images/python-3.svg',
+    label: 'Python',
+    desc: 'Python'
+  },
+  {
+    imgSrc: './src/images/pandas.svg',
+    label: 'Pandas',
+    desc: 'Pandas'
+  },
+  {
+    imgSrc: './src/images/tensorflow-2.svg',
+    label: 'TensorFlow',
+    desc: 'TensorFlow'
+  },
+  {
+    imgSrc: './src/images/pyTorch-2.svg',
+    label: 'PyTorch',
+    desc: 'PyTorch'
+  },
 ];
 
 const Skill = () => {
   return (
     <section className="section">
       <div className="container">
-        <h2 className="headline-2 reveal-up">
+        <h2 className="headline-1 reveal-up">
           Essential Tools I use
         </h2>
 

@@ -106,7 +106,7 @@ const Footer = () => {
           className="logo reveal-up"
           >
             <img 
-            src="./src/images/logo.svg" 
+            src="./src/images/abilash-maharjan-high-resolution-logo.png" 
             width={40}
             height={40}
             alt="Logo" 

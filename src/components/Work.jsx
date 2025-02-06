@@ -3,39 +3,40 @@ import ProjectCard from "./ProjectCard";
 const works = [
   {
     imgSrc: './src/images/project-1.jpg',
-    title: 'Full stack music app',
-    tags: ['API', 'MVC', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/'
+    title: 'VMS - Inventory MS',
+    tags: ['MySQL', 'Node', 'React'],
+    projectLink: 'https://github.com/mahaabi01/VMS---Frontend'
   },
   {
     imgSrc: './src/images/project-2.jpg',
-    title: 'Free stock photo app',
-    tags: ['API', 'SPA'],
-    projectLink: 'https://pixstock-official.vercel.app/'
+    title: 'eCommerce website',
+    tags: ['eCommerce', 'Development'],
+    projectLink: 'https://github.com/mahaabi01/eCommerce-mern2'
   },
   {
     imgSrc: './src/images/project-3.jpg',
-    title: 'Recipe app',
-    tags: ['Development', 'API'],
-    projectLink: ''
+    title: 'Blog Site',
+    tags: ['API', 'React', 'Frontend'],
+    projectLink: 'https://github.com/mahaabi01/reactBlogSite'
   },
   {
     imgSrc: './src/images/project-4.jpg',
-    title: 'Real state website',
-    tags: ['Web-design', 'Development'],
-    projectLink: 'https://github.com/codewithsadee-org/wealthome'
+    title: 'Book Store',
+    tags: ['Development', 'CRUD', 'Backend'],
+    projectLink: 'https://github.com/mahaabi01/bookStore'
   },
   {
     imgSrc: './src/images/project-5.jpg',
-    title: 'eCommerce website',
-    tags: ['eCommerce', 'Development'],
-    projectLink: 'https://github.com/codewithsadee/anon-ecommerce-website'
+    title: 'Expense Tracker',
+    tags: ['Web-design', 'Development'],
+    projectLink: 'https://github.com/mahaabi01/ExpenseTrackerMERN'
   },
+  
   {
     imgSrc: './src/images/project-6.jpg',
-    title: 'vCard Personal portfolio',
-    tags: ['Web-design', 'Development'],
-    projectLink: 'https://github.com/codewithsadee/vcard-personal-portfolio'
+    title: 'Chest X-ray - ARRG',
+    tags: ['AI/ML', 'LLM', 'NLP', 'Major Project-BCT'],
+    projectLink: 'https://github.com/mahaabi01/radiology-report-generation'
   },
 ];
 
@@ -46,7 +47,7 @@ const Work = () => {
     className="section"
     >
       <div className="container">
-        <h2 className="headline-2 mb-8 reveal-up">
+        <h2 className="headline-1 mb-8 reveal-up">
           My portfolio highlights
         </h2>
 

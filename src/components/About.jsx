@@ -1,7 +1,7 @@
 const aboutItems = [
   {
     label: "Project done",
-    number: 4,
+    number: 10,
   },
   {
     label: "Years of experience",
@@ -35,7 +35,8 @@ const About = () => {
             ))}
 
             <img
-              src="./src/images/logo.svg"
+              // src="./src/images/logo.svg"
+              src="./src/images/abilash-maharjan-high-resolution-logo.png"
               alt="Logo"
               width={30}
               height={30}

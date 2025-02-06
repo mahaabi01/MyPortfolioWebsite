@@ -9,45 +9,90 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 import ReviewCard from "./ReviewCard";
 
 
+// const reviews = [
+//   {
+//     content:
+//       "Exceptional web development! Delivered a seamless, responsive site with clean code and great UX.",
+//     name: "Sophia Ramirez",
+//     imgSrc: "./src/images/people-1.jpg",
+//     company: "PixelForge",
+//   },
+//   {
+//     content:
+//       "Impressive work! Fast loading times, intuitive design, and flawless backend integration. Highly recommend.",
+//     name: "Ethan Caldwell",
+//     imgSrc: "./src/images/people-2.jpg",
+//     company: "NexaWave",
+//   },
+//   {
+//     content:
+//       "Outstanding developer! Built a robust site with perfect functionality. Efficient and detail-oriented.",
+//     name: "Liam Bennett",
+//     imgSrc: "./src/images/people-3.jpg",
+//     company: "CodeCraft",
+//   },
+//   {
+//     content:
+//       "Creative and skilled! Produced a modern, user-friendly site that exceeded expectations. Great communication.",
+//     name: "Noah Williams",
+//     imgSrc: "./src/images/people-4.jpg",
+//     company: "BrightWeb",
+//   },
+//   {
+//     content:
+//       "Professional work! Delivered on time, with a polished design and smooth user experience. Top-notch developer.",
+//     name: "Ava Thompson",
+//     imgSrc: "./src/images/people-5.jpg",
+//     company: "TechMosaic",
+//   },
+//   {
+//     content:
+//       "Excellent project execution! High-quality code, responsive design, and exceptional problem-solving skills.",
+//     name: "Jonathan",
+//     imgSrc: "./src/images/people-6.jpg",
+//     company: "Skyline Digital",
+//   },
+// ];
+
 const reviews = [
   {
     content:
-      "Exceptional web development! Delivered a seamless, responsive site with clean code and great UX.",
+      "Outstanding full-stack development! Built a highly scalable web app with seamless frontend-backend integration. Impressive API design and database optimization.",
     name: "Sophia Ramirez",
     imgSrc: "./src/images/people-1.jpg",
     company: "PixelForge",
   },
   {
     content:
-      "Impressive work! Fast loading times, intuitive design, and flawless backend integration. Highly recommend.",
+      "Exceptional data science expertise! Developed a predictive model with high accuracy, clean data pipelines, and insightful visualizations. Transformed raw data into valuable business insights.",
     name: "Ethan Caldwell",
     imgSrc: "./src/images/people-2.jpg",
     company: "NexaWave",
   },
   {
     content:
-      "Outstanding developer! Built a robust site with perfect functionality. Efficient and detail-oriented.",
+      "Top-tier full-stack skills! Delivered a responsive web application with React, Node.js, and a well-structured database. Smooth authentication and real-time features.",
     name: "Liam Bennett",
     imgSrc: "./src/images/people-3.jpg",
     company: "CodeCraft",
   },
   {
     content:
-      "Creative and skilled! Produced a modern, user-friendly site that exceeded expectations. Great communication.",
+      "Brilliant data-driven solution! Built a machine learning pipeline that improved efficiency by 40%. Great understanding of model tuning and deployment.",
     name: "Noah Williams",
     imgSrc: "./src/images/people-4.jpg",
     company: "BrightWeb",
   },
   {
     content:
-      "Professional work! Delivered on time, with a polished design and smooth user experience. Top-notch developer.",
+      "Reliable and skilled! Developed a scalable full-stack e-commerce platform with secure payment integration and an intuitive UI. Highly recommend!",
     name: "Ava Thompson",
     imgSrc: "./src/images/people-5.jpg",
     company: "TechMosaic",
   },
   {
     content:
-      "Excellent project execution! High-quality code, responsive design, and exceptional problem-solving skills.",
+      "Impressive AI and data science project! Designed a recommendation system that significantly boosted user engagement. Strong grasp of data engineering and deep learning.",
     name: "Jonathan",
     imgSrc: "./src/images/people-6.jpg",
     company: "Skyline Digital",
@@ -74,7 +119,7 @@ useGSAP(() => {
     className="section overflow-hidden"
     >
       <div className="container">
-        <h2 className="headline-2 mb-8 reveal-up">
+        <h2 className="headline-1 mb-8 reveal-up">
           Reviews about my works
         </h2>
 
