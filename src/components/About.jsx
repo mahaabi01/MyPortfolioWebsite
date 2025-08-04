@@ -15,19 +15,22 @@ const About = () => {
       <div className="container">
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-            Welcome! I&apos;m Abilash, a final year Computer Engineering student
-            at IOE, Thapathali Campus, Kathmandu. With a keen interest in web
-            development and data science, I have developed numerous web
-            applications as personal projects to showcase my skills and
-            expertise and also worked in many AI/ML projects.
+            Welcome! I&apos;m Abilash, I am a full-stack web developer. With a
+            keen interest in web development and data science, I have developed
+            numerous web applications as personal projects to showcase my skills
+            and expertise and also worked in many AI/ML projects.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 md:gap-7">
             {aboutItems.map(({ label, number }, key) => (
               <div key={key}>
                 <div className="flex items-center md:mb-2">
-                  <span className="text-2xl font-semibold md:text-4xl">{number}</span>
-                  <span className="text-sky-400 font-semibold md:text-3xl">+</span>
+                  <span className="text-2xl font-semibold md:text-4xl">
+                    {number}
+                  </span>
+                  <span className="text-sky-400 font-semibold md:text-3xl">
+                    +
+                  </span>
                 </div>
 
                 <p className="text-sm text-zinc-400">{label}</p>
