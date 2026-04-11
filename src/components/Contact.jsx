@@ -105,7 +105,7 @@ const Contact = () => {
         method="POST" 
         className="xl:pl-10 2xl:pl-20"
         >
-            <div className="md:grid md:items-center md:grid-cols-2 md:gap-2">
+            <div className="md:grid md:grid-cols-2 md:gap-4">
               <div className="mb-4">
               <label 
               htmlFor="name" 
@@ -141,7 +141,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-4 md:col-span-2">
               <label htmlFor="message" className="label reveal-up">
                 Message
               </label>
@@ -151,17 +151,17 @@ const Contact = () => {
                 id="message"
                 placeholder="Hi!"
                 required
-                className="text-field resize-y min-h-32 max-h-80 reveal-up"
+                className="text-field resize-y min-h-44 max-h-80 reveal-up"
               ></textarea>
             </div>
-
-            <button 
-            type="submit" 
-            className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up"
-            >
-              Submit
-            </button>
           </div>
+
+          <button 
+          type="submit" 
+          className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </section>

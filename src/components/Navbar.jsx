@@ -1,91 +1,127 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-const Navbar = ({ navOpen }) => {
-  const lastActiveLink = useRef();
-  const activeBox = useRef();
+const navItems = [
+  {
+    label: "Home",
+    link: "#home",
+    className: "nav-link",
+    trackInScrollSpy: true,
+  },
+  {
+    label: "About",
+    link: "#about",
+    className: "nav-link",
+    trackInScrollSpy: true,
+  },
+  {
+    label: "Work",
+    link: "#work",
+    className: "nav-link",
+    trackInScrollSpy: true,
+  },
+  {
+    label: "Contact",
+    link: "#contact",
+    className: "nav-link",
+    trackInScrollSpy: true,
+  },
+];
 
-  const initActiveBox = () => {
-    if (lastActiveLink.current && activeBox.current) {
-      activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
-      activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
-      activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
-      activeBox.current.style.height = lastActiveLink.current.offsetHeight + "px";
-    }
-  };
+const defaultSection = "home";
+
+const Navbar = ({ navOpen }) => {
+  const [activeSection, setActiveSection] = useState(defaultSection);
+  const activeBox = useRef(null);
+  const linkRefs = useRef({});
 
   useEffect(() => {
-    initActiveBox();
-    window.addEventListener("resize", initActiveBox);
+    const positionActiveBox = () => {
+      const activeLink =
+        linkRefs.current[activeSection] ?? linkRefs.current[defaultSection];
 
-    // Cleanup event listener to prevent memory leaks
-    return () => window.removeEventListener("resize", initActiveBox);
+      if (activeLink && activeBox.current) {
+        activeBox.current.style.top = activeLink.offsetTop + "px";
+        activeBox.current.style.left = activeLink.offsetLeft + "px";
+        activeBox.current.style.width = activeLink.offsetWidth + "px";
+        activeBox.current.style.height = activeLink.offsetHeight + "px";
+      }
+    };
+
+    const frameId = window.requestAnimationFrame(positionActiveBox);
+    window.addEventListener("resize", positionActiveBox);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", positionActiveBox);
+    };
+  }, [activeSection, navOpen]);
+
+  useEffect(() => {
+    const trackedSections = navItems
+      .filter(({ trackInScrollSpy }) => trackInScrollSpy)
+      .map(({ link }) => document.querySelector(link))
+      .filter(Boolean);
+
+    if (!trackedSections.length) return;
+
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + 160;
+      let currentSection = defaultSection;
+
+      trackedSections.forEach((section) => {
+        if (scrollPosition >= section.offsetTop) {
+          currentSection = section.id;
+        }
+      });
+
+      setActiveSection((previousSection) =>
+        previousSection === currentSection ? previousSection : currentSection
+      );
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
-
-  const activeCurrentLink = (event) => {
-    lastActiveLink.current?.classList.remove("active");
-    event.target.classList.add("active");
-    lastActiveLink.current = event.target;
-
-    activeBox.current.style.top = event.target.offsetTop + "px";
-    activeBox.current.style.left = event.target.offsetLeft + "px";
-    activeBox.current.style.width = event.target.offsetWidth + "px";
-    activeBox.current.style.height = event.target.offsetHeight + "px";
-  };
-
-  const navItems = [
-    { 
-      label: "Home", 
-      link: "#home", 
-      className: "nav-link active", 
-      ref: lastActiveLink 
-    },
-    { 
-      label: "About", 
-      link: "#about", 
-      className: "nav-link" 
-    },
-    { 
-      label: "Work", 
-      link: "#work", 
-      className: "nav-link" 
-    },
-    { 
-      label: "Reviews", 
-      link: "#reviews", 
-      className: "nav-link" 
-    },
-    { 
-      label: "Contact", 
-      link: "#contact", 
-      className: "nav-link md:hidden" 
-    },
-  ];
 
   return (
     <nav className={"navbar " + (navOpen ? "active" : "")}>
-      {navItems.map(({ label, link, className,ref }, index) => (
-        <a
-          href={link}
-          key={index}
-          ref={ref}
-          className={className}
-          onClick={activeCurrentLink}
-        >
-          {label}
-        </a>
-      ))
-      }
-      <div 
-      className="active-box" 
-      ref={activeBox}
-      >
+      {navItems.map(({ label, link, className }, index) => {
+        const sectionId = link.replace("#", "");
 
-      </div>
+        return (
+          <a
+            href={link}
+            key={index}
+            ref={(element) => {
+              if (element) {
+                linkRefs.current[sectionId] = element;
+              }
+            }}
+            className={`${className} ${
+              activeSection === sectionId ? "active" : ""
+            }`}
+            aria-current={activeSection === sectionId ? "page" : undefined}
+            onClick={() => {
+              if (document.querySelector(link)) {
+                setActiveSection(sectionId);
+              }
+            }}
+          >
+            {label}
+          </a>
+        );
+      })}
+      <div className="active-box" ref={activeBox}></div>
     </nav>
   );
 };
-
 
 Navbar.propTypes = {
   navOpen: PropTypes.bool.isRequired,
