@@ -1,72 +1,56 @@
 import { ButtonPrimary, ButtonOutline } from "./Button";
 
-const Hero = () => {
-  return (
-    <section 
-    id="home" 
-    className="pt-28 lg:pt-36"
-    >
-        <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
-          <div>
-            <div className="flex items-center gap-3">
-              <figure className="img-box w-9 h-9 rounded-lg">
-                <img
-                  src="images/abilash1.jpg"
-                  width={40}
-                  height={40}
-                  alt="Abilash Maharjan Portrait"
-                  className="img-cover"
-                />
-              </figure>
-
-              <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
-                <span className="relative w-2 h-2 rounded-full bg-emerald-400">
-                  <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
-                </span>
-                Available for work
-              </div>
-            </div>
-
-            <h2 className="headline-1 max-w-[15ch] sm:max-w-20ch lg:max-w-[15ch] mt-5 mb-8 lg:mb-10">
-              Abilash Maharjan - Full Stack Developer & Data Science Student
-            </h2>
-
-            <div className="flex items-center gap-3">
-              <a
-              href="https://drive.google.com/drive/u/0/folders/1pVyLsa8XjqeqL6PwXtYZ5EY0z7I31lpu"
-              target="_blank"
-              rel="noopener noreferrer"
-              >
-              <ButtonPrimary 
-              label="Download CV"
-              icon="download"
-              />
-              </a>
-              
-              <ButtonOutline 
-              href="#about"
-              label="Scroll down"
-              icon="arrow_downward"
-              />
-            </div>
-          </div>
-
-          <div className="hidden lg:block">
-            <figure 
-            className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
-              <img
-                // src="./src/images/abilash (1).png"
-                src="images/abilash (1).png"
-                width={656}
-                height={800}
-                alt="Abilash Maharjan"
-                className="w-full"
-              />
-            </figure>
-          </div>
+const Hero = () => (
+  <section id="home" className="hero-section">
+    <div className="hero-grid container">
+      <div className="hero-copy">
+        <div className="eyebrow reveal-up"><span>~/portfolio</span><b>main</b></div>
+        <h1 className="hero-title reveal-up">I build software across the <span>full stack.</span></h1>
+        <p className="hero-intro reveal-up">
+          Hey, I&apos;m Abilash — a Computer Engineer working across React and
+          Next.js interfaces, Node.js and .NET backends, relational and document
+          databases, and Python-based AI/ML projects.
+        </p>
+        <div className="hero-actions reveal-up">
+          <ButtonPrimary href="#work" label="Explore projects" icon="south_east" />
+          <ButtonOutline href="https://drive.google.com/file/d/1lWJ-gJiHot6-pySPOqMKtHOlvSWHveKq/view" target="_blank" label="View résumé" icon="description" />
+          <ButtonOutline href="https://github.com/mahaabi01" target="_blank" label="github/mahaabi01" icon="arrow_outward" />
         </div>
-    </section>
-  );
-};
+        <div className="hero-status reveal-up">
+          <span><i /> open_to: full-stack / backend roles</span>
+          <span>based_in: Lalitpur, Nepal</span>
+        </div>
+      </div>
+
+      <div className="dev-console reveal-up">
+        <div className="console-bar">
+          <div><i /><i /><i /></div>
+          <span>developer.config.ts</span>
+          <b>⌘ K</b>
+        </div>
+        <div className="console-body">
+          <div className="profile-chip">
+            <img src="/images/abilash (1).png" alt="Abilash Maharjan" />
+            <div><strong>Abilash Maharjan</strong><span>Computer Engineer · MSc student</span></div>
+            <em>ONLINE</em>
+          </div>
+          <pre aria-label="Developer profile code"><code>
+            <span className="code-purple">const</span> developer = {"{"}<br />
+            {"  "}<span className="code-blue">frontend</span>: [<span className="code-green">&quot;React&quot;</span>, <span className="code-green">&quot;Next.js&quot;</span>],<br />
+            {"  "}<span className="code-blue">backend</span>: [<span className="code-green">&quot;Node.js&quot;</span>, <span className="code-green">&quot;.NET&quot;</span>],<br />
+            {"  "}<span className="code-blue">data_ai</span>: [<span className="code-green">&quot;SQL&quot;</span>, <span className="code-green">&quot;Python&quot;</span>, <span className="code-green">&quot;ML&quot;</span>],<br />
+            {"  "}<span className="code-blue">curious</span>: <span className="code-purple">true</span><br />
+            {"}"};
+          </code></pre>
+          <div className="system-map" aria-hidden="true">
+            <span>CLIENT</span><i>→</i><span>API</span><i>→</i><span>DATA</span><i>→</i><span>MODEL</span>
+          </div>
+          <div className="console-foot"><span>● server running</span><span>39 public repos</span><span>6+ years on GitHub</span></div>
+        </div>
+      </div>
+    </div>
+    <div className="hero-marquee" aria-hidden="true"><div>REACT · NEXT.JS · NODE.JS · ASP.NET CORE · TYPESCRIPT · C# · POSTGRESQL · MONGODB · PYTHON · PYTORCH · REACT · NEXT.JS · NODE.JS · ASP.NET CORE · TYPESCRIPT · C# · POSTGRESQL · MONGODB · PYTHON · PYTORCH · </div></div>
+  </section>
+);
 
 export default Hero;

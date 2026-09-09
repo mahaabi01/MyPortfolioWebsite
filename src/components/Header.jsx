@@ -1,38 +1,17 @@
-import Navbar from "./Navbar";
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0">
-      <div className="max-w-screen-2xl w-full mx-auto px-4 flex justify-between items-center md:px-6 md:grid md:grid-cols-[1fr,3fr,1fr]">
-        <h1>
-          <a href="/" className="logo">
-            <img
-              // src="./src/images/abilash-maharjan-high-resolution-logo.png"
-              src="images/abilash-maharjan-high-resolution-logo.png"
-              width={40}
-              height={40}
-              alt="Abilash Maharjan"
-              title="Abilash Maharjan Logo"
-            />
-          </a>
-        </h1>
-
-        <div className="relative md:justify-self-center">
-          <button className="menu-btn md:hidden" onClick={() => setNavOpen((prev) => !prev)}>
-            <span className="material-symbols-rounded">
-              {navOpen ? "close" : "menu"}
-            </span>
-          </button>
-          <Navbar navOpen={navOpen} />
-        </div>
-
-        <a 
-        href="#contact" 
-        className="btn btn-secondary max-md:hidden md:justify-self-end">
-          Contact Me
-        </a>
+    <header className="site-header">
+      <div className="header-inner">
+        <a href="#home" className="wordmark" aria-label="Abilash Maharjan, home"><span>&lt;AM /&gt;</span><strong>Abilash Maharjan<br /><small>Web · Backend · AI/ML</small></strong></a>
+        <Navbar navOpen={navOpen} closeNav={() => setNavOpen(false)} />
+        <a href="mailto:mahaabi01@gmail.com" className="header-contact"><span className="online-dot" />Available to connect</a>
+        <button className="menu-btn" onClick={() => setNavOpen((open) => !open)} aria-label="Toggle navigation" aria-expanded={navOpen}>
+          <span>{navOpen ? "Close" : "Menu"}</span>
+        </button>
       </div>
     </header>
   );

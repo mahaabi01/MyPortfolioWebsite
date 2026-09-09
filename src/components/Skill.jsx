@@ -1,99 +1,22 @@
-import SkillCard from "./SkillCard";
-
-
-
-const skillItem = [
-  {
-    imgSrc: 'images/figma.svg',
-    label: 'Figma',
-    desc: 'Design tool'
-  },
-  {
-    imgSrc: 'images/css3.svg',
-    label: 'CSS',
-    desc: 'User Interface'
-  },
-  {
-    imgSrc: 'images/javascript.svg',
-    label: 'JavaScript',
-    desc: 'Interaction'
-  },
-  {
-    imgSrc: 'images/nodejs.svg',
-    label: 'NodeJS',
-    desc: 'Web Server'
-  },
-  {
-    imgSrc: 'images/expressjs.svg',
-    label: 'ExpressJS',
-    desc: 'Node Framework'
-  },
-  {
-    imgSrc: 'images/mongodb.svg',
-    label: 'MongoDB',
-    desc: 'Database'
-  },
-  {
-    imgSrc: 'images/react.svg',
-    label: 'React',
-    desc: 'Framework'
-  },
-  {
-    imgSrc: 'images/tailwindcss.svg',
-    label: 'TailwindCSS',
-    desc: 'User Interface'
-  },
-  {
-    imgSrc: 'images/python-3.svg',
-    label: 'Python',
-    desc: 'Python'
-  },
-  {
-    imgSrc: 'images/pandas.svg',
-    label: 'Pandas',
-    desc: 'Pandas'
-  },
-  {
-    imgSrc: 'images/tensorflow-2.svg',
-    label: 'TensorFlow',
-    desc: 'TensorFlow'
-  },
-  {
-    imgSrc: 'images/pytorch-2.svg',
-    label: 'PyTorch',
-    desc: 'PyTorch'
-  },
+const groups = [
+  { number: "01", title: "Frontend", tools: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Responsive UI"] },
+  { number: "02", title: "Backend", tools: ["Node.js / Express", "ASP.NET Core", "C#", "REST APIs", "JWT / OpenAPI", "Clean architecture"] },
+  { number: "03", title: "Data & Delivery", tools: ["PostgreSQL", "MongoDB", "MySQL / SQL Server", "Prisma / EF Core", "Linux / Nginx", "GitHub Actions"] },
+  { number: "04", title: "AI / ML", tools: ["Python", "PyTorch", "TensorFlow", "Pandas / NumPy", "Scikit-learn", "NLP"] },
 ];
 
-const Skill = () => {
-  return (
-    <section className="section">
-      <div className="container">
-        <h2 className="headline-1 reveal-up">
-          Essential Tools I use
-        </h2>
-
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] reveal-up">
-          Discover the powerful tools and technologies I use to create exceptional, high-performing websites & applications.
-        </p>
-
-        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {
-            skillItem.map(({ imgSrc, label, desc }, key)=> 
-            (
-              <SkillCard 
-              key={key}
-              imgSrc={imgSrc}
-              label={label}
-              desc={desc}
-              classes="reveal-up"
-              />
-            ))
-          }
-        </div>
+const Skill = () => (
+  <section id="capabilities" className="section skill-section">
+    <div className="container">
+      <div className="section-heading horizontal reveal-up">
+        <div><span className="section-index">02 // STACK</span><h2>Tools in my runtime.</h2></div>
+        <p>Technologies I&apos;ve used across production work, training, coursework, and side projects.</p>
       </div>
-    </section>
-  )
-}
+      <div className="capability-grid">
+        {groups.map((group) => <article className="capability-card reveal-up" key={group.title}><span>{group.number}</span><h3>{group.title}</h3><ul>{group.tools.map((tool) => <li key={tool}>{tool}</li>)}</ul></article>)}
+      </div>
+    </div>
+  </section>
+);
 
-export default Skill
+export default Skill;

@@ -1,54 +1,22 @@
-const aboutItems = [
-  {
-    label: "Project done",
-    number: 10,
-  },
-  {
-    label: "Years of experience",
-    number: 1,
-  },
-];
-
-const About = () => {
-  return (
-    <section id="about" className="section">
-      <div className="container">
-        <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
-            Welcome! I&apos;m Abilash, I am a full-stack web developer. With a
-            keen interest in web development and data science, I have developed
-            numerous web applications as personal projects to showcase my skills
-            and expertise and also worked in many AI/ML projects.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-4 md:gap-7">
-            {aboutItems.map(({ label, number }, key) => (
-              <div key={key}>
-                <div className="flex items-center md:mb-2">
-                  <span className="text-2xl font-semibold md:text-4xl">
-                    {number}
-                  </span>
-                  <span className="text-sky-400 font-semibold md:text-3xl">
-                    +
-                  </span>
-                </div>
-
-                <p className="text-sm text-zinc-400">{label}</p>
-              </div>
-            ))}
-
-            <img
-              src="images/abilash-maharjan-high-resolution-logo.png"
-              alt="Logo"
-              width={30}
-              height={30}
-              className="ml-auto md:w-[40px] md:h-[40px]"
-            />
-          </div>
+const About = () => (
+  <section id="about" className="section">
+    <div className="container about-grid">
+      <div className="section-heading reveal-up"><span className="section-index">01 // README</span><h2>The human behind the endpoints.</h2></div>
+      <div className="about-copy reveal-up">
+        <p className="lead">I started with JavaScript, got curious about what happens behind the interface, and kept following the stack downward—from components to APIs, databases, servers, and models.</p>
+        <div className="about-columns">
+          <p>I graduated in Computer Engineering from Thapathali Campus with First Division and now study Informatics and Intelligent Systems Engineering at master&apos;s level. My work spans React, Next.js, Node.js, ASP.NET Core, APIs, and modern database tooling.</p>
+          <p>Alongside production web development, I explore machine learning with Python, PyTorch, and TensorFlow — including chest X-ray radiology report generation, data analysis, and model-driven product ideas.</p>
         </div>
+        <div className="evidence-strip" aria-label="Professional strengths">
+          <div><strong>End to end</strong><span>UI, API, data, deployment</span></div>
+          <div><strong>Backend minded</strong><span>Auth, schemas, integrations</span></div>
+          <div><strong>Production aware</strong><span>Linux, Nginx, CI/CD</span></div>
+        </div>
+        <div className="personal-note"><span>communication.txt</span> Newari and Nepali (native) · English and Hindi (professional)</div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;

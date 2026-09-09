@@ -1,69 +1,27 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-const ProjectCard = ({
-  imgSrc,
-  title,
-  tags,
-  projectLink,
-  classes
-}) => {
-  return (
-    <div className={"relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors"+ classes}>
-      <figure className="img-box aspect-square rounded-lg mb-4">
-        <img 
-        src={imgSrc}
-        alt={title}
-        loading='lazy'
-        className="img-cover"
-        />
-      </figure>
-
-      <div className="flex items-center justify-between gap-4">
-        <div>
-          <h3 className="title-1 mb-3">
-            {title}
-          </h3>
-
-          <div className="flex flex-wrap items-center gap-2">
-            {tags.map((label, key)=>(
-              <span 
-              key={key}
-              className="h-8 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg"
-              >
-                {label}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0">
-          <span 
-          className="material-symbols-rounded"
-          aria-hidden="true"
-          >
-            arrow_outward 
-          </span>
-        </div>
-
+const ProjectCard = ({ project, index }) => (
+  <article className="project-card reveal-up">
+    <a href={project.link} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>
+      <div className="project-number">{String(index + 1).padStart(2, "0")}</div>
+      <div className="project-content">
+        <div className="project-kicker">{project.kicker} · {project.year}</div>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <ul>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
       </div>
-
-      <a 
-      href={projectLink}
-      target='_blank'
-      className="absolute inset-0"
-      >
-
-      </a>
-    </div>
-  )
-}
+      <span className="project-arrow">View repository ↗</span>
+    </a>
+  </article>
+);
 
 ProjectCard.propTypes = {
-  imgSrc: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  tags: PropTypes.array.isRequired,
-  projectLink: PropTypes.string,
-  classes: PropTypes.string
-}
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired, description: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired, year: PropTypes.string.isRequired,
+    kicker: PropTypes.string.isRequired, tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
-export default ProjectCard
+export default ProjectCard;

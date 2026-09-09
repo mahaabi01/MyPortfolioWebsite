@@ -1,96 +1,16 @@
 import PropTypes from "prop-types";
 
-// Primary button
+const LinkButton = ({ href, target, label, icon, variant, classes = "" }) => (
+  <a href={href} target={target} rel={target === "_blank" ? "noreferrer" : undefined} className={`btn btn-${variant} ${classes}`}>
+    <span>{label}</span>{icon && <span className="material-symbols-rounded" aria-hidden="true">{icon}</span>}
+  </a>
+);
 
-const ButtonPrimary = ({ 
-  href, 
-  target = '_self', 
-  label, 
-  icon, 
-  classes 
-}) => {
-  if (href) {
-    return (
-      <a 
-      href={href} 
-      target={target} 
-      className={"btn btn-primary " + classes}
-      >
-        {label}
-        {icon ? (
-          <span className="material-symbols-rounded" aria-hidden="true">
-            {icon}
-          </span>
-        ) : undefined}
-      </a>
-    );
-  } else {
-    return (
-      <button className={"btn btn-primary " + classes}>
-        {label}
-
-        {icon ? (
-          <span className="material-symbols-rounded" aria-hidden="true">
-            {icon}
-          </span>
-        ) : undefined}
-      </button>
-    );
-  }
+LinkButton.propTypes = {
+  href: PropTypes.string.isRequired, target: PropTypes.string, label: PropTypes.string.isRequired,
+  icon: PropTypes.string, variant: PropTypes.string.isRequired, classes: PropTypes.string,
 };
 
-ButtonPrimary.propTypes = {
-  label: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  target: PropTypes.string,
-  icon: PropTypes.string,
-  classes: PropTypes.string,
-};
-// Outline button
-
-const ButtonOutline = ({ 
-  href, target = "_self", 
-  label, 
-  icon, 
-  classes 
-}) => {
-  if (href) {
-    return (
-      <a href={href} 
-      target={target} 
-      className={"btn btn-outline " + classes}
-      >
-        {label}
-        {icon ? (
-          <span className="material-symbols-rounded" aria-hidden="true">
-            {icon}
-          </span>
-        ) : undefined}
-      </a>
-    );
-  } else {
-    return (
-      <button className={"btn btn-outline " + classes}>
-        {label}
-
-        {icon ? (
-          <span className="material-symbols-rounded" aria-hidden="true">
-            {icon}
-          </span>
-        ) : undefined}
-      </button>
-    );
-  }
-};
-
-ButtonOutline.propTypes = {
-  label: PropTypes.string.isRequired,
-  href: PropTypes.string,
-  target: PropTypes.string,
-  icon: PropTypes.string,
-  classes: PropTypes.string,
-};
-
-
-
+const ButtonPrimary = (props) => <LinkButton {...props} variant="primary" />;
+const ButtonOutline = (props) => <LinkButton {...props} variant="outline" />;
 export { ButtonPrimary, ButtonOutline };
